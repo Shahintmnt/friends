@@ -1,0 +1,369 @@
+{
+  "inbounds": [
+    {
+      "address": [
+        "172.19.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "endpoint_independent_nat": false,
+      "mtu": 9000,
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 2080
+        }
+      },
+      "stack": "system",
+      "strict_route": false,
+      "type": "tun"
+    },
+    {
+      "listen": "127.0.0.1",
+      "listen_port": 2080,
+      "type": "mixed",
+      "users": []
+    }
+  ],
+  "outbounds": [
+    {
+      "outbounds": [
+        "auto",
+        "direct",
+        "Socks",
+        "HTTP",
+        "V-TCP",
+        "V-HTTP",
+        "V-WS",
+        "V-gRPC",
+        "V-HTTPUpgrade",
+        "T-TCP",
+        "T-HTTP",
+        "T-WS",
+        "T-gRPC",
+        "T-HTTPUpgrade",
+        "vl-TCP",
+        "vl-HTTP",
+        "vl-WS",
+        "vl-gRPC",
+        "vl-HTTPUpgrade",
+        "Hysteria",
+        "Hysteria2",
+        "Tuic"
+      ],
+      "tag": "proxy",
+      "type": "selector"
+    },
+    {
+      "interval": "10m",
+      "outbounds": [
+        "Socks",
+        "HTTP",
+        "V-TCP",
+        "V-HTTP",
+        "V-WS",
+        "V-gRPC",
+        "V-HTTPUpgrade",
+        "T-TCP",
+        "T-HTTP",
+        "T-WS",
+        "T-gRPC",
+        "T-HTTPUpgrade",
+        "vl-TCP",
+        "vl-HTTP",
+        "vl-WS",
+        "vl-gRPC",
+        "vl-HTTPUpgrade",
+        "Hysteria",
+        "Hysteria2",
+        "Tuic"
+      ],
+      "tag": "auto",
+      "tolerance": 50,
+      "type": "urltest",
+      "url": "http://www.gstatic.com/generate_204"
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    },
+    {
+      "password": "7YVdFcnz5W",
+      "server": "germanbisogno.com.ar.germanbisogno.com.ar",
+      "server_port": 22156,
+      "tag": "Socks",
+      "type": "socks",
+      "username": "Telegramm@soalvajaab"
+    },
+    {
+      "password": "7YVdFcnz5W",
+      "server": "germanbisogno.com.ar.germanbisogno.com.ar",
+      "server_port": 41859,
+      "tag": "HTTP",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      },
+      "type": "http",
+      "username": "Telegramm@soalvajaab"
+    },
+    {
+      "server": "germanbisogno.com.ar.germanbisogno.com.ar",
+      "server_port": 35685,
+      "tag": "V-TCP",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      },
+      "transport": {},
+      "type": "vmess",
+      "uuid": "d0c6a1a8-6054-40d4-abb3-e97f3102b52a"
+    },
+    {
+      "server": "germanbisogno.com.ar.germanbisogno.com.ar",
+      "server_port": 59960,
+      "tag": "V-HTTP",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      },
+      "transport": {
+        "type": "http"
+      },
+      "type": "vmess",
+      "uuid": "d0c6a1a8-6054-40d4-abb3-e97f3102b52a"
+    },
+    {
+      "server": "germanbisogno.com.ar.germanbisogno.com.ar",
+      "server_port": 12446,
+      "tag": "V-WS",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "d0c6a1a8-6054-40d4-abb3-e97f3102b52a"
+    },
+    {
+      "server": "germanbisogno.com.ar.germanbisogno.com.ar",
+      "server_port": 35759,
+      "tag": "V-gRPC",
+      "transport": {
+        "type": "grpc"
+      },
+      "type": "vmess",
+      "uuid": "d0c6a1a8-6054-40d4-abb3-e97f3102b52a"
+    },
+    {
+      "server": "germanbisogno.com.ar.germanbisogno.com.ar",
+      "server_port": 33358,
+      "tag": "V-HTTPUpgrade",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      },
+      "transport": {
+        "type": "httpupgrade"
+      },
+      "type": "vmess",
+      "uuid": "d0c6a1a8-6054-40d4-abb3-e97f3102b52a"
+    },
+    {
+      "password": "7YVdFcnz5W",
+      "server": "germanbisogno.com.ar.germanbisogno.com.ar",
+      "server_port": 31185,
+      "tag": "T-TCP",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      },
+      "transport": {},
+      "type": "trojan"
+    },
+    {
+      "password": "7YVdFcnz5W",
+      "server": "germanbisogno.com.ar.germanbisogno.com.ar",
+      "server_port": 25115,
+      "tag": "T-HTTP",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      },
+      "transport": {
+        "type": "http"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "7YVdFcnz5W",
+      "server": "germanbisogno.com.ar.germanbisogno.com.ar",
+      "server_port": 14120,
+      "tag": "T-WS",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "7YVdFcnz5W",
+      "server": "germanbisogno.com.ar.germanbisogno.com.ar",
+      "server_port": 44432,
+      "tag": "T-gRPC",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      },
+      "transport": {
+        "type": "grpc"
+      },
+      "type": "trojan"
+    },
+    {
+      "password": "7YVdFcnz5W",
+      "server": "germanbisogno.com.ar.germanbisogno.com.ar",
+      "server_port": 39152,
+      "tag": "T-HTTPUpgrade",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      },
+      "transport": {
+        "type": "httpupgrade"
+      },
+      "type": "trojan"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "server": "germanbisogno.com.ar.germanbisogno.com.ar",
+      "server_port": 55499,
+      "tag": "vl-TCP",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      },
+      "transport": {},
+      "type": "vless",
+      "uuid": "d0c6a1a8-6054-40d4-abb3-e97f3102b52a"
+    },
+    {
+      "server": "germanbisogno.com.ar.germanbisogno.com.ar",
+      "server_port": 24011,
+      "tag": "vl-HTTP",
+      "transport": {
+        "type": "http"
+      },
+      "type": "vless",
+      "uuid": "d0c6a1a8-6054-40d4-abb3-e97f3102b52a"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "server": "germanbisogno.com.ar.germanbisogno.com.ar",
+      "server_port": 26492,
+      "tag": "vl-WS",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "path": "/",
+        "type": "ws"
+      },
+      "type": "vless",
+      "uuid": "d0c6a1a8-6054-40d4-abb3-e97f3102b52a"
+    },
+    {
+      "server": "germanbisogno.com.ar.germanbisogno.com.ar",
+      "server_port": 43300,
+      "tag": "vl-gRPC",
+      "transport": {
+        "type": "grpc"
+      },
+      "type": "vless",
+      "uuid": "d0c6a1a8-6054-40d4-abb3-e97f3102b52a"
+    },
+    {
+      "server": "germanbisogno.com.ar.germanbisogno.com.ar",
+      "server_port": 45515,
+      "tag": "vl-HTTPUpgrade",
+      "transport": {
+        "type": "http"
+      },
+      "type": "vless",
+      "uuid": "d0c6a1a8-6054-40d4-abb3-e97f3102b52a"
+    },
+    {
+      "auth_str": "7YVdFcnz5W",
+      "down_mbps": 100,
+      "obfs": "789321",
+      "server": "germanbisogno.com.ar.germanbisogno.com.ar",
+      "server_port": 51194,
+      "tag": "Hysteria",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      },
+      "type": "hysteria",
+      "up_mbps": 100
+    },
+    {
+      "obfs": {
+        "password": "987654",
+        "type": "salamander"
+      },
+      "password": "7YVdFcnz5W",
+      "server": "germanbisogno.com.ar.germanbisogno.com.ar",
+      "server_port": 54587,
+      "tag": "Hysteria2",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      },
+      "type": "hysteria2"
+    },
+    {
+      "congestion_control": "cubic",
+      "password": "7YVdFcnz5W",
+      "server": "germanbisogno.com.ar.germanbisogno.com.ar",
+      "server_port": 33039,
+      "tag": "Tuic",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      },
+      "type": "tuic",
+      "uuid": "d0c6a1a8-6054-40d4-abb3-e97f3102b52a"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true,
+    "final": "proxy",
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "action": "route",
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "action": "route",
+        "clash_mode": "Global",
+        "outbound": "proxy"
+      }
+    ]
+  }
+}
